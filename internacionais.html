@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>casos internacionais</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="megafonenovo.jfif" type="image/x-icon">
+    
+</head>
+<body>
+    <div id="principal">
+
+        <header>
+            <a href="index.html">
+              <h1 style="cursor: pointer;">liberdade.com</h1>
+            </a>
+
+            <a href="index.html"><img src="imagenscasos/image-Photoroom (4).png" alt="icon"></a>
+
+            <form>
+              <input placeholder='Pesquisar'/>
+              <button>enviar</button>
+            </form>
+            <nav>
+              <button style="color: rgb(32, 83, 32); ">
+                  <a href='index.html'>Home</a>
+                  /
+                  <a href='sobre.html'>Sobre</a>
+                  /
+                  <a href='https://mail.google.com/mail/u/1/#inbox?compose=DmwnWrRtsfhcBKGJcStZWfXwHtkmZgrvPclNPFFGDFPvJHsdfKxKDKXjZVKQCdjbWfPmGXDVpdLL'>Contato</a>
+            </button>
+          </nav>
+        </header>
+        
+        <menu class="menuu">
+        
+        </menu>
+        <header>
+            <button><a href="medidas.html">medidas</a></button>
+            <button><a href="biblioteca.html">biblioteca censurada</a></button>
+            <button><a href="casos.html">casos reais</a></button>
+            <button><a href="bolha.html">você está numa bolha?</a></button>
+            <!--<button><a href="index.html"></a></button>!-->
+            <button><a href="sobre.html">sobre nós</a></button>
+        </header>
+        
+
+
+        <br>
+
+        <div id="container">
+        
+
+            <div id="glossario"  style="padding-left: 700px;">
+            <header >
+                <button style="margin-right: 20px;"><a href="brasileiros.html">casos brasileiros</a></button>
+                
+                <button style="margin-right: 20px;"><a href="internacionais.html">casos internacionais</a></button>
+               
+            </header>
+            </div>
+            <br>
+            
+        </div>
+
+        <br> 
+
+        <div id="listacasos">
+    
+            <div class="casinho">
+                <img src="imagenscasos/Hebdo3.jpg" width="400">
+    
+                <h2>Caso Chalie Hebdo - 2015</h2>
+                <p>Resumo do caso envolvendo o Charlie Hebdo, marcado por violência extremista, debates sobre sátira política, tensões culturais globais e reflexões essenciais sobre limites da liberdade de expressão em pauta global.
+                </p>
+    
+                <p>
+                    <button><a href="Hebdo.html">saiba mais</a></button>
+                </p>
+    
+    
+            </div>
+
+            
+
+            <div class="casinho">
+                <img src="imagenscasos/Edward1.jpg" width="400">
+    
+                <h2> Caso Edward Snowden - 2013</h2>
+                <p>Resumo do caso envolvendo Edward Snowden, pautado por revelações sigilosas, controvérsias internacionais, tensões entre privacidade e segurança e discussões profundas sobre liberdade de expressão no cenário global.
+                </p>
+    
+                <p>
+                    <button><a href="Snowden.html">saiba mais</a></button>
+                </p>
+
+            </div>
+            
+            <div class="casinho">
+                <img src="imagenscasos/Wiki2.jpg" width="400">
+    
+                <h2> Caso WikiLeaks - 2006 </h2>
+                <p>Resumo do caso envolvendo o WikiLeaks, composto por divulgações sensíveis, pressões governamentais, debates éticos sobre transparência e impactos relevantes no diálogo global sobre liberdade de expressão em pauta.
+    
+                <p>
+                    <button><a href="Wiki.html">saiba mais</a></button>
+                </p>
+            </div>
+
+            <div class="limpar">
+    
+            </div>
+    
+        </div>
+    
+    
+
+
+
+        <div class="seta">
+            <p>
+                <a href="casos.html">
+                    <img src="seta.png" title="volte para o topo" width="80">
+                </a>
+            </p>
+        </div>
+
+        <footer>
+        
+            <div id="container"> 
+                <ul>
+                    <p>&copy; 2025 - Todos os direitos reservados</p>
+                        <p>Entre em contato pelo e-mail: levibarbosa1112@gmail.com</p>
+                    
+                        <nav>
+                            <ul>
+                                <li><a href="#">Termos de uso</a></li>
+                                <li><a href="#">Política de privacidade</a></li>
+                                <li><a href="#">Sobre nós</a></li>
+                            </ul>
+                        </nav>
+                </ul>
+    
+                <a href="sobre.html">
+                    <img src="gif boneco branco.gif" width="300px">
+                </a>
+    
+
+                <img style="margin-left: 40px;" src="logo ifba.jfif" width="200px">
+    
+                    
+                    
+            </div>
+            
+            
+            </footer>
+
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.querySelector('form');
+          const input = form.querySelector('input');
+          
+          
+          const highlightColor = 'rgba(149, 60, 15, 0.411)';
+        
+          
+          form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const term = input.value.trim();
+            if (!term) return; 
+        
+           
+            removeHighlights();
+        
+            
+            highlightWord(term);
+          });
+        
+          function highlightWord(word) {
+           
+            const regex = new RegExp(`(${escapeRegExp(word)})`, 'gi');
+        
+           
+            walk(document.body, node => {
+              if (node.nodeType === 3 && node.parentNode.tagName !== 'SCRIPT' && node.parentNode.tagName !== 'STYLE') {
+                const text = node.textContent;
+                if (regex.test(text)) {
+                  const span = document.createElement('span');
+                  span.innerHTML = text.replace(regex, `<span class="highlight">$1</span>`);
+                  node.replaceWith(...span.childNodes);
+                }
+              }
+            });
+          }
+        
+         
+          function removeHighlights() {
+            document.querySelectorAll('.highlight').forEach(el => {
+              const parent = el.parentNode;
+              parent.replaceChild(document.createTextNode(el.textContent), el);
+              parent.normalize(); 
+            });
+          }
+        
+      
+          function walk(node, callback) {
+            callback(node);
+            node = node.firstChild;
+            while (node) {
+              walk(node, callback);
+              node = node.nextSibling;
+            }
+          }
+        
+         
+          function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          }
+        });
+    </script>
+        
+    <style>
+        .highlight {
+            background-color: rgba(149, 60, 15, 0.411);
+            padding: 0 2px;
+            border-radius: 3px;
+        }
+    </style>
+    
+</body>
+</html>
